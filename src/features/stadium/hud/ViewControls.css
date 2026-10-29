@@ -1,0 +1,84 @@
+.view-controls {
+  position: absolute;
+  z-index: 10;
+  left: calc(var(--gap) + var(--safe-left));
+  bottom: calc(16px + var(--safe-bottom));
+  display: flex;
+  gap: 6px;
+  padding: 6px;
+}
+
+.view-controls__button {
+  min-width: 38px;
+  height: 38px;
+  padding: 0 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 18px;
+  line-height: 1;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.view-controls__button:hover,
+.view-controls__button:active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-text);
+}
+
+.view-controls__button--full {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.view-controls__icon {
+  font-size: 16px;
+}
+
+/* Phones: a slim column on the right edge */
+@media (max-width: 760px) {
+  .view-controls {
+    left: auto;
+    right: calc(var(--gap) + var(--safe-right));
+    bottom: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    flex-direction: column;
+    padding: 5px;
+  }
+  .view-controls__button {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    font-size: 22px;
+  }
+  .view-controls__label {
+    display: none;
+  }
+  .view-controls__icon {
+    font-size: 20px;
+  }
+}
+
+/* Landscape phones: along the bottom, clear of the stand list and selection panel */
+@media (max-height: 520px) and (orientation: landscape) {
+  .view-controls {
+    left: calc(var(--gap) + var(--safe-left) + 124px);
+    right: auto;
+    top: auto;
+    bottom: calc(8px + var(--safe-bottom));
+    transform: none;
+    flex-direction: row;
+  }
+  .view-controls__button {
+    width: auto;
+    min-width: 40px;
+    height: 38px;
+    padding: 0 10px;
+    font-size: 18px;
+  }
+}

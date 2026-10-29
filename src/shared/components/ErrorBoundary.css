@@ -1,0 +1,25 @@
+.error-screen {
+  height: 100dvh;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 12px;
+  padding: 24px;
+  text-align: center;
+}
+
+.error-screen h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.error-screen p {
+  margin: 0;
+  max-width: 420px;
+  color: var(--muted);
+}
+
+.error-screen .btn-primary {
+  width: auto;
+  padding-inline: 28px;
+}

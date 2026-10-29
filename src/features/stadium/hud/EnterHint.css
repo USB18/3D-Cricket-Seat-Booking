@@ -1,0 +1,34 @@
+.enter-hint {
+  position: absolute;
+  z-index: 10;
+  bottom: calc(48px + var(--safe-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  white-space: nowrap;
+  pointer-events: none;
+  animation: enter-hint-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes enter-hint-pulse {
+  50% {
+    opacity: 0.55;
+    transform: translateX(-50%) scale(1.04);
+  }
+}
+
+@media (max-width: 760px) {
+  .enter-hint {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .enter-hint {
+    animation: none;
+  }
+}

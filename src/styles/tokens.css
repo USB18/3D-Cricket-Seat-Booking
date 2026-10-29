@@ -1,0 +1,72 @@
+/*
+ * Design tokens: colours for each theme, fonts and spacing.
+ * The active theme is set by `data-theme` on <html> (see shared/theme/useTheme.ts).
+ *
+ * Breakpoints used across the app (CSS custom properties can't be used in media queries):
+ *   tablet  — max-width: 1024px
+ *   phone   — max-width: 760px
+ *   landscape phone — max-height: 520px and orientation: landscape
+ */
+
+:root,
+:root[data-theme='dark'] {
+  --bg: #070b14;
+  --panel: rgba(16, 22, 36, 0.82);
+  --line: rgba(255, 255, 255, 0.1);
+  --text: #e8edf7;
+  --muted: #8a96ad;
+  --soft: rgba(255, 255, 255, 0.06);
+  --soft-hover: rgba(255, 255, 255, 0.12);
+  --accent: #4f8cff;
+  --accent-text: #fff;
+  --success: #22c55e;
+  --success-text: #04210f;
+  --danger: #ef4444;
+  --toast-bg: #111827;
+  --pill-bg: rgba(15, 23, 42, 0.85);
+  --pill-fg: #fff;
+  --login-background: radial-gradient(circle at 50% 30%, #12306a 0%, #070b14 60%);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  color-scheme: dark;
+}
+
+:root[data-theme='light'] {
+  --bg: #e6eef9;
+  --panel: rgba(255, 255, 255, 0.86);
+  --line: rgba(15, 23, 42, 0.12);
+  --text: #0f172a;
+  --muted: #5b677d;
+  --soft: rgba(15, 23, 42, 0.05);
+  --soft-hover: rgba(15, 23, 42, 0.1);
+  --accent: #2563eb;
+  --accent-text: #fff;
+  --success: #16a34a;
+  --success-text: #fff;
+  --danger: #ef4444;
+  --toast-bg: #ffffff;
+  --pill-bg: rgba(255, 255, 255, 0.92);
+  --pill-fg: #0f172a;
+  --login-background: radial-gradient(circle at 50% 30%, #bcd3ff 0%, #e6eef9 65%);
+  --shadow: 0 10px 30px rgba(15, 23, 42, 0.18);
+  color-scheme: light;
+}
+
+:root {
+  --font-body: 'Open Sans', 'Lato', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-heading: 'Lato', 'Open Sans', system-ui, sans-serif;
+
+  /* Space between the screen edge and floating panels */
+  --gap: 12px;
+
+  /* Notches / home indicator on phones */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+}
+
+@media (max-width: 760px) {
+  :root {
+    --gap: 8px;
+  }
+}

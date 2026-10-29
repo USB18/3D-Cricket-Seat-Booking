@@ -1,0 +1,24 @@
+.sector-pill {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid var(--pill-fg);
+  background: var(--pill-bg);
+  color: var(--pill-fg);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.sector-pill:hover {
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
+.sector-pill--active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-text);
+  transform: scale(1.25);
+  box-shadow: 0 0 0 4px rgba(79, 140, 255, 0.35);
+}

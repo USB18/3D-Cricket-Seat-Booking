@@ -1,0 +1,102 @@
+.stands-panel {
+  position: absolute;
+  z-index: 10;
+  top: calc(68px + var(--safe-top));
+  left: calc(var(--gap) + var(--safe-left));
+  width: 150px;
+  padding: 12px;
+}
+
+.stands-panel__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+  margin-bottom: 8px;
+}
+
+.stands-panel__stand {
+  padding: 7px 0;
+  font-size: 13px;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.stands-panel__stand:hover,
+.stands-panel__stand:active,
+.stands-panel__stand--active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-text);
+}
+
+.stands-panel__hint {
+  margin: 10px 0 0;
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .stands-panel {
+    width: 132px;
+    padding: 10px;
+  }
+}
+
+/* Phones: a horizontally scrolling strip under the header */
+@media (max-width: 760px) {
+  .stands-panel {
+    top: calc(56px + var(--safe-top));
+    right: calc(var(--gap) + var(--safe-right));
+    width: auto;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .stands-panel::-webkit-scrollbar {
+    display: none;
+  }
+  .stands-panel .panel-heading,
+  .stands-panel__hint {
+    display: none;
+  }
+  .stands-panel__grid {
+    display: flex;
+    gap: 6px;
+    margin: 0;
+  }
+  .stands-panel__stand {
+    flex: 0 0 auto;
+    min-width: 38px;
+    height: 36px;
+    padding: 0 10px;
+  }
+}
+
+/* Landscape phones: a small grid down the left edge */
+@media (max-height: 520px) and (orientation: landscape) {
+  .stands-panel {
+    top: calc(52px + var(--safe-top));
+    right: auto;
+    width: 112px;
+    padding: 8px;
+    display: block;
+    max-height: calc(100dvh - 64px);
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .stands-panel__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .stands-panel__stand {
+    min-width: 0;
+    height: 30px;
+    padding: 0;
+  }
+}

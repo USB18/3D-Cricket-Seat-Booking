@@ -1,0 +1,30 @@
+.toast {
+  position: absolute;
+  z-index: 20;
+  bottom: calc(70px + var(--safe-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: min(90vw, 460px);
+  padding: 11px 18px;
+  font-size: 14px;
+  text-align: center;
+  background: var(--toast-bg);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 760px) {
+  .toast {
+    bottom: auto;
+    top: calc(150px + var(--safe-top));
+    font-size: 13px;
+  }
+}
+
+@media (max-height: 520px) and (orientation: landscape) {
+  .toast {
+    top: auto;
+    bottom: calc(50px + var(--safe-bottom));
+  }
+}

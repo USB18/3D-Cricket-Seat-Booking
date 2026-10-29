@@ -1,0 +1,56 @@
+/* Reset and page-level defaults */
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
+  background: var(--bg);
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--text);
+  transition: background 0.25s;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+  cursor: pointer;
+}
+
+/* Secondary text */
+.muted {
+  margin: 4px 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Small uppercase heading used by the HUD panels */
+.panel-heading {
+  display: flex;
+  justify-content: space-between;
+  margin: 4px 0 8px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+}

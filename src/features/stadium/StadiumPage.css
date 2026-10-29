@@ -1,0 +1,10 @@
+.stadium-page {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+}
+
+.stadium-page canvas {
+  display: block;
+  cursor: pointer;
+}

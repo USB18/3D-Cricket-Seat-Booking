@@ -1,0 +1,136 @@
+.selection-panel {
+  position: absolute;
+  z-index: 10;
+  top: calc(68px + var(--safe-top));
+  right: calc(var(--gap) + var(--safe-right));
+  width: 270px;
+  max-height: calc(100dvh - 84px - var(--safe-top) - var(--safe-bottom));
+  overflow: auto;
+  padding: 14px;
+}
+
+.selection-panel .panel-heading:not(:first-child) {
+  margin-top: 18px;
+}
+
+.selection-panel__count {
+  color: var(--text);
+}
+
+.selection-panel__total {
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 2px 8px;
+}
+
+/* ---- seat lists ---- */
+.seat-list {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.seat-list__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  font-size: 14px;
+  background: rgba(251, 146, 60, 0.14);
+  border: 1px solid rgba(251, 146, 60, 0.45);
+  border-radius: 9px;
+}
+
+.seat-list__item--booked {
+  background: rgba(250, 204, 21, 0.14);
+  border-color: rgba(202, 138, 4, 0.45);
+}
+
+.seat-list__link {
+  padding: 0;
+  font-weight: 700;
+  background: transparent;
+  border: 0;
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+}
+
+.seat-list__price {
+  margin-left: auto;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.seat-list__action {
+  padding: 4px 6px;
+  font-size: 12px;
+  color: var(--muted);
+  background: transparent;
+  border: 0;
+}
+
+.seat-list__action:hover {
+  color: var(--danger);
+}
+
+/* ---- legend ---- */
+.legend {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.legend__entry {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend__swatch {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .selection-panel {
+    width: 240px;
+    padding: 12px;
+  }
+}
+
+/* Phones: a bottom sheet (legend hidden to save space) */
+@media (max-width: 760px) {
+  .selection-panel {
+    top: auto;
+    left: calc(var(--gap) + var(--safe-left));
+    bottom: calc(var(--gap) + var(--safe-bottom));
+    width: auto;
+    max-height: 36dvh;
+    padding: 12px;
+  }
+  .selection-panel__legend {
+    display: none;
+  }
+}
+
+/* Landscape phones: narrow panel down the right edge */
+@media (max-height: 520px) and (orientation: landscape) {
+  .selection-panel {
+    top: calc(52px + var(--safe-top));
+    bottom: auto;
+    left: auto;
+    right: calc(var(--gap) + var(--safe-right));
+    width: 220px;
+    max-height: calc(100dvh - 64px - var(--safe-bottom));
+    padding: 10px;
+  }
+  .selection-panel__legend {
+    display: none;
+  }
+}

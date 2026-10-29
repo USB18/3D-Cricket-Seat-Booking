@@ -1,0 +1,37 @@
+.seat-view-bar {
+  position: absolute;
+  z-index: 10;
+  top: calc(76px + var(--safe-top));
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 8px 8px 16px;
+  border-radius: 999px;
+  font-family: var(--font-heading);
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.seat-view-bar button {
+  padding: 8px 14px;
+  font-weight: 600;
+  color: var(--accent-text);
+  background: var(--accent);
+  border: 0;
+  border-radius: 999px;
+}
+
+@media (max-width: 760px) {
+  .seat-view-bar {
+    top: calc(104px + var(--safe-top));
+    max-width: calc(100vw - 16px);
+    gap: 8px;
+    padding: 6px 6px 6px 12px;
+    font-size: 12px;
+  }
+  .seat-view-bar button {
+    padding: 7px 10px;
+  }
+}

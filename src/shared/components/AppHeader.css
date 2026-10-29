@@ -1,0 +1,86 @@
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 14px;
+}
+
+/* Floats over the 3D view */
+.app-header--overlay {
+  position: absolute;
+  z-index: 10;
+  top: calc(var(--gap) + var(--safe-top));
+  left: calc(var(--gap) + var(--safe-left));
+  right: calc(var(--gap) + var(--safe-right));
+}
+
+.app-header__title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 46vw;
+}
+
+.app-header__subtitle {
+  color: var(--muted);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.app-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+  min-width: 0;
+  font-size: 14px;
+}
+
+.app-header__user {
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 1024px) {
+  .app-header__subtitle {
+    font-size: 12px;
+  }
+}
+
+/* Phones: the title takes the free space; subtitle and user name are hidden */
+@media (max-width: 760px) {
+  .app-header {
+    padding: 6px 10px;
+    gap: 8px;
+  }
+  .app-header__title {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: none;
+    font-size: 14px;
+  }
+  .app-header__subtitle,
+  .app-header__user {
+    display: none;
+  }
+  .app-header__actions {
+    flex: none;
+    margin-left: 0;
+    gap: 6px;
+  }
+  .app-header .btn-ghost {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+}
+
+@media (max-height: 520px) and (orientation: landscape) {
+  .app-header--overlay {
+    padding: 4px 10px;
+  }
+}
